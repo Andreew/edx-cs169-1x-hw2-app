@@ -1,0 +1,9 @@
+class Movie < ActiveRecord::Base
+  def self.all_movies(params)
+    order(params).all
+  end 
+
+  def self.all_ratings
+    select("distinct rating").pluck("rating")
+  end 
+end
